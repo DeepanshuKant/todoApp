@@ -93,9 +93,9 @@
 .create__list__parent {
     width: 30%;
     /* border: 1px solid black; */
-    position: absolute;
+    /* position: absolute;
     right: 10px;
-    top: 25px;
+    top: 25px; */
 }
 
 .create__list {
@@ -138,4 +138,52 @@
     padding: 1em 2em;
     font-size: 1rem;
     cursor: pointer;
+}
+
+
+/* Mediq Query for mobile */
+
+@media only screen and (max-width: 600px) {
+    .main__outer__box {
+        flex-direction: column-reverse;
+    }
+
+    .create__list__parent {
+        width: 100%;
+    }
+
+    .lists__main__parent {
+        padding: 1em;
+        width: 100%;
+    }
+
+    .list__parent__box {
+        border: .2px solid rgba(0, 0, 0, 0.245);
+        width: 45%;
+        padding: .5em;
+    }
+
+    .list__title {
+        font-size: .8rem;
+    }
+
+    .list__desc {
+        font-size: .6rem;
+    }
+
+    .list__created {
+        font-size: .5rem;
+    }
+
+    .low {
+        font-size: .8em;
+    }
+
+    .medium {
+        font-size: .8em;
+    }
+
+    .red {
+        font-size: .8em;
+    }
 }
