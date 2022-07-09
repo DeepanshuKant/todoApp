@@ -1,0 +1,141 @@
+/* List CSS */
+.main__outer__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+
+/* AllLists CSS */
+.lists__main__parent {
+    padding: 1em;
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    /* align-items:; */
+    flex-wrap: wrap;
+    /* border: 1px solid red; */
+    gap: 10px;
+}
+
+.list__parent__box {
+    border: .2px solid rgba(0, 0, 0, 0.245);
+    width: 24%;
+    padding: 2em;
+    text-align: left;
+    line-height: 1.5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+
+.list__title {
+    font-size: 1rem;
+    margin: .5em 0;
+}
+
+.list__desc {
+    color: rgba(0, 0, 0, 0.500);
+    border-bottom: .2px solid rgba(0, 0, 0, 0.245);
+}
+
+.list__created {
+    margin-top: 20px;
+    color: rgba(0, 0, 0, 0.500);
+    font-size: .6em;
+}
+
+.low {
+    color: green;
+    border: .2px solid rgba(54, 223, 7, 0.245);
+    display: inline-block;
+    padding: .2em;
+    font-size: 1em;
+}
+
+.medium {
+    color: orange;
+    border: .2px solid rgba(255, 164, 44, 0.245);
+    display: inline-block;
+    padding: .2em;
+
+    font-size: 1em;
+}
+
+.red {
+    color: red;
+    border: .2px solid rgba(255, 0, 0, 0.245);
+    display: inline-block;
+    padding: .2em;
+
+    font-size: 1em;
+}
+
+.list__delete {
+    border: .2px solid rgba(0, 0, 0, 0.245);
+    outline: none;
+    background: white;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 1em 1.2em;
+    cursor: pointer;
+    /* width: 100px; */
+    /* margin: auto; */
+}
+
+/* CreateList CSS */
+.create__list__parent {
+    width: 30%;
+    /* border: 1px solid black; */
+    position: absolute;
+    right: 10px;
+    top: 25px;
+}
+
+.create__list {
+    border: .2px solid rgba(0, 0, 0, 0.245);
+    padding: 1em;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.create__list>form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.create__list>form>input {
+    padding: 10px;
+    margin: 5px 0;
+    outline: none;
+    border: .2px solid rgba(0, 0, 0, 0.245);
+}
+
+.create__list>form>div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.create__list>form>div>select {
+    outline: none;
+    border: .2px solid rgba(0, 0, 0, 0.245);
+    padding: .5em 1em;
+}
+
+
+.create__list>form>button {
+    background-color: transparent;
+    outline: none;
+    border: .2px solid rgba(0, 0, 0, 0.245);
+    padding: 1em 2em;
+    font-size: 1rem;
+    cursor: pointer;
+}

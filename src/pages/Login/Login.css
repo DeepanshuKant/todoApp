@@ -1,0 +1,77 @@
+.main__login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-top: .2px solid rgba(0, 0, 0, 0.245);
+    border-bottom: .2px solid rgba(0, 0, 0, 0.245);
+}
+
+.login__box {
+    /* border: 1px solid black; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3em;
+}
+
+.login__box>h1 {
+    margin-top: 1em;
+    font-size: 3rem;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: .5em;
+}
+
+.login__box>form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__box>form>input[type=text] {
+    width: 100%;
+    margin: .4em;
+    padding: 5px;
+    color: black;
+    outline: none;
+}
+
+.login__box>form>input[type=email] {
+    width: 100%;
+    margin: .4em;
+    padding: 5px;
+    color: black;
+    outline: none;
+}
+
+.login__box>form>input[type=password] {
+    width: 100%;
+    margin: .4em;
+    padding: 5px;
+    color: black;
+    outline: none;
+}
+
+.login__box>form>input[type=submit] {
+    padding: 10px;
+    color: black;
+    background-color: white;
+    border: .2px solid rgba(0, 0, 0, 0.245);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.login__box>p {
+    margin-top: 1em;
+    font-size: 1rem;
+}
+
+.login__box>p>a {
+    text-decoration: underline;
+    color: black;
+    cursor: pointer;
+}

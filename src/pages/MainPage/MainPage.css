@@ -1,0 +1,33 @@
+.main__page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+    margin-top: 8em;
+}
+
+.buttons {
+    border-top: .2px solid rgba(0, 0, 0, 0.245);
+    border-bottom: .2px solid rgba(0, 0, 0, 0.245);
+    width: 100%;
+    padding: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons>button {
+    margin: 1em;
+    padding: 1em;
+    background-color: white;
+    color: black;
+    width: 200px;
+    border: .2px solid rgba(0, 0, 0, 0.245);
+    outline: none;
+    font-weight: light;
+    letter-spacing: 1.2px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
