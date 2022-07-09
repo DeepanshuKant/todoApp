@@ -6,7 +6,7 @@ export const getLists = (id) => async (dispatch) => {
     try {
         dispatch({ type: LIST_REQUEST })
 
-        const response = await axios.get(`http://localhost:4000/api/v1/list/${id}`);
+        const response = await axios.get(`https://todo-appbackend.herokuapp.com/api/v1/list/${id}`);
 
         dispatch({ type: LIST_SUCCESS, payload: response.data });
 
@@ -21,7 +21,7 @@ export const createList = (id, { details }) => async (dispatch) => {
     try {
         dispatch({ type: CREATE_LIST_REQUEST })
 
-        const response = await axios.post(`http://localhost:4000/api/v1/list/new/${id}`, details)
+        const response = await axios.post(`https://todo-appbackend.herokuapp.com/api/v1/list/new/${id}`, details)
 
         dispatch({ type: CREATE_LIST_SUCCESS, payload: response.data })
 
@@ -35,7 +35,7 @@ export const deleteList = (id) => async (dispatch) => {
     try {
         dispatch({ type: DELETE_LIST_REQUEST })
 
-        const reponse = await axios.delete(`http://localhost:4000/api/v1/list/delete/${id}`)
+        const reponse = await axios.delete(`https://todo-appbackend.herokuapp.com/api/v1/list/delete/${id}`)
         dispatch({ type: DELETE_LIST_SUCCESS, payload: reponse.data.success })
 
     } catch (error) {

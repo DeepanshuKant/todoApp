@@ -13,7 +13,7 @@ const LogoutTab = () => {
     async function logoutNow() {
 
         try {
-            const response = await axios.get(`http://localhost:4000/api/v1/user/logout`, { withCredentials: true, credentials: 'include' })
+            const response = await axios.get(`https://todo-appbackend.herokuapp.com/api/v1/user/logout`, { withCredentials: true, credentials: 'include' })
 
             if (response.status === 200) {
                 window.localStorage.clear();
