@@ -23,6 +23,7 @@
 
 .list__parent__box {
     border: .2px solid rgba(0, 0, 0, 0.245);
+    border-radius: 3px;
     width: 24%;
     padding: 2em;
     text-align: left;
@@ -32,6 +33,15 @@
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 10px;
+    position: relative;
+    transition: bottom 10s ease-in;
+}
+
+.list__parent__box:hover {
+    bottom: 5px;
+    transition: bottom 10s ease-in;
+    cursor: pointer;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.123);
 }
 
 
@@ -53,10 +63,13 @@
 
 .low {
     color: green;
+    /* color: black; */
+    /* background-color: green; */
     border: .2px solid rgba(54, 223, 7, 0.245);
     display: inline-block;
     padding: .2em;
     font-size: 1em;
+
 }
 
 .medium {
@@ -78,13 +91,15 @@
 }
 
 .list__delete {
-    border: .2px solid rgba(0, 0, 0, 0.245);
     outline: none;
-    background: white;
     display: inline-block;
     margin-top: 10px;
     padding: 1em 1.2em;
     cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(107, 43, 255);
+    color: white;
     /* width: 100px; */
     /* margin: auto; */
 }
@@ -100,6 +115,7 @@
 
 .create__list {
     border: .2px solid rgba(0, 0, 0, 0.245);
+    border-radius: 3px;
     padding: 1em;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -134,7 +150,10 @@
 .create__list>form>button {
     background-color: transparent;
     outline: none;
-    border: .2px solid rgba(0, 0, 0, 0.245);
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(107, 43, 255);
+    color: white;
     padding: 1em 2em;
     font-size: 1rem;
     cursor: pointer;

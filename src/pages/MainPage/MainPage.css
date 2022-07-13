@@ -20,10 +20,11 @@
 .buttons>button {
     margin: 1em;
     padding: 1em;
-    background-color: white;
-    color: black;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(107, 43, 255);
+    color: white;
     width: 200px;
-    border: .2px solid rgba(0, 0, 0, 0.245);
     outline: none;
     font-weight: light;
     letter-spacing: 1.2px;
