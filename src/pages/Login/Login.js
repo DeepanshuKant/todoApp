@@ -51,7 +51,7 @@ const Login = () => {
                             <input type="password" placeholder='Enter Password' required value={password} onChange={(e) => setPassword(e.target.value)} />
                             <input type="submit" value="Login" />
                         </form>
-                        <p>Dont't have an Account <Link to="/register" >Register</Link></p>
+                        <p>Don't have an Account <Link to="/register" >Register</Link></p>
                     </div>
                 </div>
             </div>
