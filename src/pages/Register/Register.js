@@ -8,10 +8,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { registerUser, clearErrors } from '../../redux/reducers/userReducer/user.action'
 import { useNavigate } from 'react-router-dom'
 
+import Loader from '../../components/Loader/Loader'
+
 const Register = () => {
 
     const dispatch = useDispatch()
     const reduxStore = useSelector((store) => store.userReducer)
+
     const navigate = useNavigate()
     const [userName, setUserName] = useState('')
     const [email, setEmail] = useState('')
@@ -47,7 +50,7 @@ const Register = () => {
 
     return (
         <>
-            <div id="register">
+            {reduxStore.loading ? <Loader /> : (<div id="register">
                 <div className="main__register">
                     <div className="register__box">
                         <h1>Register</h1>
@@ -60,7 +63,7 @@ const Register = () => {
                         <p>Already have an Account <Link to="/login" >Login</Link></p>
                     </div>
                 </div>
-            </div>
+            </div>)}
         </>
     )
 }
