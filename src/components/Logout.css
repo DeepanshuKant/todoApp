@@ -8,6 +8,15 @@
     border-bottom: .2px solid rgba(0, 0, 0, 0.245);
 }
 
+.user__name {
+    margin-right: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 5px 8px;
+    border-radius: 100px;
+    color: white;
+    background-color: #111111;
+}
+
 .main__logout>button {
     padding: 1em;
     border: none;

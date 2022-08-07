@@ -5,10 +5,12 @@ import './Logout.css'
 import axios from 'axios'
 
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 
 const LogoutTab = () => {
 
+    const userReducer = useSelector((store) => store.userReducer)
 
     async function logoutNow() {
 
@@ -30,6 +32,7 @@ const LogoutTab = () => {
 
             <div id="logout">
                 <div className="main__logout">
+                    <div className="user__name">Hey! {userReducer.user.user.name}</div>
                     <button onClick={logoutNow} >Logout</button>
                 </div>
             </div>

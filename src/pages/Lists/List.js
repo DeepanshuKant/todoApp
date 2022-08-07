@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import CreateList from './CreateList'
 import AllList from './AllLists'
+import Loader from '../../components/Loader/Loader'
 
 import { getLists, clearErrors } from '../../redux/reducers/listReducer/list.action'
 
@@ -48,7 +49,7 @@ const List = () => {
         <>
             <LogoutTab />
             <div className="main__outer__box">
-                {reduxStore.loading ? <h1>Loading...</h1> : (<AllList lists={lists} />)}
+                {reduxStore.loading ? <Loader /> : (<AllList lists={lists} />)}
                 <CreateList />
             </div>
         </>

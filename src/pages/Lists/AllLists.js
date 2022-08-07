@@ -31,20 +31,22 @@ const AllLists = ({ lists }) => {
     }, [dispatch, reduxStore.isDeleted, reduxStore.error])
 
     return (
-        <div className="lists__main__parent">
-            {lists.map((list) => {
-                return (
-                    <div key={list._id} className='list__parent__box' >
-                        <p className={classNames({ 'red': list.priority === 'high' }, { 'low': list.priority === 'low' }, { 'medium': list.priority === 'medium' })} >Priority: {list.priority}</p>
-                        <h1 className='list__title'>{list.title}</h1>
-                        <p className='list__desc' >{list.description}</p>
-                        <p className='list__created' >{list.createdAt}</p>
+        <>
+            <div className="lists__main__parent">
+                {lists.map((list) => {
+                    return (
+                        <div key={list._id} className='list__parent__box' >
+                            <p className={classNames({ 'red': list.priority === 'high' }, { 'low': list.priority === 'low' }, { 'medium': list.priority === 'medium' })} >Priority: {list.priority}</p>
+                            <h1 className='list__title'>{list.title}</h1>
+                            <p className='list__desc' >{list.description}</p>
+                            <p className='list__created' >{list.createdAt}</p>
 
-                        <button className='list__delete' onClick={(e) => deleteHandler(list._id)}>Delete</button>
-                    </div>
-                )
-            })}
-        </div>
+                            <button className='list__delete' onClick={(e) => deleteHandler(list._id)}>Delete</button>
+                        </div>
+                    )
+                })}
+            </div>
+        </>
     )
 }
 

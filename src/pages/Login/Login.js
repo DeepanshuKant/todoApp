@@ -7,6 +7,9 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { loginUser, clearErrors } from '../../redux/reducers/userReducer/user.action'
 
+//import component
+import Loader from '../../components/Loader/Loader'
+
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -34,27 +37,29 @@ const Login = () => {
         }
 
         if (reduxStore.isAuthenticated) {
-            alert('You are logged in')
             navigate('/lists')
         }
+
 
     }, [dispatch, reduxStore.error, alert, navigate, reduxStore.isAuthenticated])
 
     return (
         <>
-            <div id="login">
-                <div className="main__login">
-                    <div className="login__box">
-                        <h1>Login</h1>
-                        <form onSubmit={login}>
-                            <input type="email" placeholder='Enter Email' required value={email} onChange={(e) => setEmail(e.target.value)} />
-                            <input type="password" placeholder='Enter Password' required value={password} onChange={(e) => setPassword(e.target.value)} />
-                            <input type="submit" value="Login" />
-                        </form>
-                        <p>Don't have an Account <Link to="/register" >Register</Link></p>
+            {reduxStore.loading ? (<Loader />) : (
+                <div id="login">
+                    <div className="main__login">
+                        <div className="login__box">
+                            <h1>Login</h1>
+                            <form onSubmit={login}>
+                                <input type="email" placeholder='Enter Email' required value={email} onChange={(e) => setEmail(e.target.value)} />
+                                <input type="password" placeholder='Enter Password' required value={password} onChange={(e) => setPassword(e.target.value)} />
+                                <input type="submit" value="Login" />
+                            </form>
+                            <p>Don't have an Account <Link to="/register" >Register</Link></p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
         </>
     )
 }

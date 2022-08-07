@@ -31,7 +31,6 @@ const CreateList = () => {
         e.preventDefault();
         dispatch(createList(userRedux.user.user._id, { details }))
         clearFields();
-
     }
 
     useEffect(() => {
