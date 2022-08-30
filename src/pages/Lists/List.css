@@ -6,13 +6,14 @@
     align-items: center;
     padding: 10px;
     position: relative;
+    /* border: 1px solid red; */
 }
 
 
 /* AllLists CSS */
 .lists__main__parent {
     padding: 1em;
-    width: 70%;
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     /* align-items:; */
@@ -22,7 +23,8 @@
 }
 
 .list__parent__box {
-    border: .2px solid rgba(0, 0, 0, 0.245);
+    border: .2px solid rgba(255, 255, 255, 0.363);
+    background: rgba(255, 255, 255, 0.215);
     border-radius: 3px;
     width: 24%;
     padding: 2em;
@@ -47,11 +49,14 @@
 
 .list__title {
     font-size: 1rem;
+    min-height: 50px;
     margin: .5em 0;
+    color: #fefefe;
 }
 
 .list__desc {
-    color: rgba(0, 0, 0, 0.500);
+    color: rgba(0, 0, 0, 0.712);
+    min-height: 80px;
     border-bottom: .2px solid rgba(0, 0, 0, 0.245);
 }
 
@@ -62,27 +67,36 @@
 }
 
 .low {
-    color: green;
+    color: white;
     /* color: black; */
-    /* background-color: green; */
+    background-color: green;
     border: .2px solid rgba(54, 223, 7, 0.245);
     display: inline-block;
+    display: flex;
+    align-items: center;
     padding: .2em;
     font-size: 1em;
 
 }
 
 .medium {
-    color: orange;
+    color: white;
+    font-weight: 500;
+    background-color: orange;
+    display: flex;
+    align-items: center;
     border: .2px solid rgba(255, 164, 44, 0.245);
     display: inline-block;
     padding: .2em;
-
     font-size: 1em;
 }
 
 .red {
-    color: red;
+    color: white;
+    font-weight: 500;
+    background-color: red;
+    display: flex;
+    align-items: center;
     border: .2px solid rgba(255, 0, 0, 0.245);
     display: inline-block;
     padding: .2em;
@@ -104,6 +118,18 @@
     /* margin: auto; */
 }
 
+.list__edit {
+    cursor: pointer;
+    font-size: 20px;
+    transition: color .2s ease-in;
+    margin-top: 3px;
+}
+
+.list__edit:hover {
+    color: rgb(107, 43, 255);
+}
+
+
 /* CreateList CSS */
 .create__list__parent {
     width: 30%;
@@ -114,7 +140,8 @@
 }
 
 .create__list {
-    border: .2px solid rgba(0, 0, 0, 0.245);
+    border: .2px solid rgba(255, 255, 255, 0.363);
+    background: rgba(255, 255, 255, 0.215);
     border-radius: 3px;
     padding: 1em;
     text-align: center;
@@ -159,6 +186,41 @@
     cursor: pointer;
 }
 
+/* Edit List card */
+.edit__list__parent {
+    color: white;
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    background: linear-gradient(to right, #7F00FF, #E100FF);
+    border-radius: 10px;
+    transform: translate(-50%, -30%);
+    z-index: 20;
+    display: none;
+    /* opacity: 0; */
+}
+
+.edit__list__parent__changed {
+    display: block;
+}
+
+.edit__list {
+    background: linear-gradient(to right, #7F00FF, #E100FF);
+    border-radius: 10px;
+    border: none;
+}
+
+.empty__div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    background: rgba(27, 27, 27, 0.813);
+    z-index: 18;
+}
 
 /* Mediq Query for mobile */
 
@@ -178,16 +240,18 @@
 
     .list__parent__box {
         border: .2px solid rgba(0, 0, 0, 0.245);
-        width: 45%;
+        width: 100%;
         padding: .5em;
     }
 
     .list__title {
-        font-size: .8rem;
+        font-size: 1rem;
+        min-height: 20px;
     }
 
     .list__desc {
         font-size: .6rem;
+        min-height: 20px;
     }
 
     .list__created {

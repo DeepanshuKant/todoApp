@@ -2,20 +2,21 @@ import React from 'react'
 import classNames from 'classnames'
 import './List.css'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { deleteList, getLists, clearErrors } from '../../redux/reducers/listReducer/list.action'
 import { useDispatch, useSelector } from 'react-redux'
+import { AiFillEdit } from 'react-icons/ai'
+
 const AllLists = ({ lists }) => {
 
     const dispatch = useDispatch()
     const reduxStore = useSelector((store) => store.listReducer)
     const userReducer = useSelector((store) => store.userReducer)
+
     function deleteHandler(id) {
         dispatch(deleteList(id))
 
     }
-
-
     useEffect(() => {
 
 
@@ -25,10 +26,16 @@ const AllLists = ({ lists }) => {
         }
 
         if (reduxStore.isDeleted) {
-            alert(`Task Deleted Successfully`)
+            // alert(`Task Deleted Successfully`)
             dispatch(getLists(userReducer.user.user._id))
         }
     }, [dispatch, reduxStore.isDeleted, reduxStore.error])
+
+
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [priority, setPriority] = useState('low');
+
 
     return (
         <>
@@ -39,12 +46,13 @@ const AllLists = ({ lists }) => {
                             <p className={classNames({ 'red': list.priority === 'high' }, { 'low': list.priority === 'low' }, { 'medium': list.priority === 'medium' })} >Priority: {list.priority}</p>
                             <h1 className='list__title'>{list.title}</h1>
                             <p className='list__desc' >{list.description}</p>
-                            <p className='list__created' >{list.createdAt}</p>
+                            <p className='list__created' >{String(list.createdAt).substr(0, 10)}</p>
 
                             <button className='list__delete' onClick={(e) => deleteHandler(list._id)}>Delete</button>
                         </div>
                     )
                 })}
+
             </div>
         </>
     )

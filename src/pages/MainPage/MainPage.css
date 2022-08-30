@@ -3,13 +3,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: white;
+    background: rgba(255, 255, 255, 0.215);
     margin-top: 8em;
 }
 
 .buttons {
-    border-top: .2px solid rgba(0, 0, 0, 0.245);
-    border-bottom: .2px solid rgba(0, 0, 0, 0.245);
+    border-top: .2px solid rgba(255, 255, 255, 0.363);
+    border-bottom: .2px solid rgba(255, 255, 255, 0.363);
     width: 100%;
     padding: 3em;
     display: flex;
@@ -23,6 +23,7 @@
     border: none;
     border-radius: 3px;
     background-color: rgb(107, 43, 255);
+    /* box-shadow: 0 2px 7px rgb(107, 43, 255); */
     color: white;
     width: 200px;
     outline: none;

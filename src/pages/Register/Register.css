@@ -4,8 +4,9 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    border-top: .2px solid rgba(0, 0, 0, 0.245);
-    border-bottom: .2px solid rgba(0, 0, 0, 0.245);
+    border-top: .2px solid rgba(255, 255, 255, 0.363);
+    border-bottom: .2px solid rgba(255, 255, 255, 0.363);
+    background: rgba(255, 255, 255, 0.215);
 }
 
 .register__box {
