@@ -26,7 +26,6 @@ const Login = () => {
     function login(event) {
         event.preventDefault()
         dispatch(loginUser({ details }))
-
     }
 
     useEffect(() => {

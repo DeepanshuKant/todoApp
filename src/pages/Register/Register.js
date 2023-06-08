@@ -19,11 +19,13 @@ const Register = () => {
     const [userName, setUserName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [secretCodee, setSecretCode] = useState('')
 
     const details = {
         name: userName,
         email: email,
-        password: password
+        password: password,
+        secretCode: secretCodee
     }
 
     async function register(event) {
@@ -41,8 +43,6 @@ const Register = () => {
 
         if (reduxStore.isAuthenticated) {
             alert('You are registered')
-            // console.log(reduxStore.user)
-            // document.cookie = `token = ${reduxStore.user.token}`
             navigate('/login')
         }
 
@@ -58,6 +58,7 @@ const Register = () => {
                             <input type="text" placeholder='Enter UserName' required value={userName} onChange={(e) => setUserName(e.target.value)} />
                             <input type="email" placeholder='Enter Email' required value={email} onChange={(e) => setEmail(e.target.value)} />
                             <input type="password" placeholder='Enter Password' required value={password} onChange={(e) => setPassword(e.target.value)} />
+                            <input type="password" placeholder='Enter Secret Code' required value={secretCodee} onChange={(e) => setSecretCode(e.target.value)} />
                             <input type="submit" value="Register" />
                         </form>
                         <p>Already have an Account <Link to="/login" >Login</Link></p>

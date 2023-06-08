@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { createList, clearErrors } from '../../redux/reducers/listReducer/list.action'
+import Swal from 'sweetalert2'
 
 import { getLists } from '../../redux/reducers/listReducer/list.action'
 import './List.css'
@@ -10,21 +11,21 @@ const CreateList = () => {
     const dispatch = useDispatch()
     const userRedux = useSelector((store) => store.userReducer)
     const reduxStore = useSelector((store) => store.listReducer)
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [priority, setPriority] = useState('low');
+    const [idd, setIdd] = useState('');
+    const [passwordd, setPasswordd] = useState('');
+    const [categoryy, setCategoryy] = useState('Google');
 
 
     const details = {
-        title: title,
-        description: description,
-        priority: priority,
+        id: idd,
+        password: passwordd,
+        category: categoryy,
     }
 
     function clearFields() {
-        setTitle('')
-        setDescription('')
-        setPriority('low')
+        setIdd('')
+        setPasswordd('')
+        setCategoryy('Google')
     }
 
     const createNew = (e) => {
@@ -36,12 +37,21 @@ const CreateList = () => {
     useEffect(() => {
 
         if (reduxStore.error) {
-            alert(reduxStore.error)
+            // alert(reduxStore.error)
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `${reduxStore.error}`,
+            })
+
             dispatch(clearErrors())
         }
 
         if (reduxStore.isCreated) {
-            alert('List created')
+            // alert('Password Saved')
+
+            Swal.fire('Successfull!', 'Password Saved', 'success')
+
             dispatch(getLists(userRedux.user.user._id))
         }
 
@@ -53,19 +63,19 @@ const CreateList = () => {
         <>
             <div className="create__list__parent">
                 <div className="create__list">
-                    <h1>Create New Task</h1>
+                    <h1>Secure New Password</h1>
                     <form onSubmit={createNew}>
-                        <input type="text" placeholder='Enter Title' required value={title} onChange={(e) => setTitle(e.target.value)} />
-                        <input type="text" placeholder='Enter a little Description' required value={description} onChange={(e) => setDescription(e.target.value)} />
+                        <input type="text" placeholder='Enter ID' required value={idd} onChange={(e) => setIdd(e.target.value)} />
+                        <input type="password" placeholder='Enter Password' required value={passwordd} onChange={(e) => setPasswordd(e.target.value)} />
                         <div className="forPriority">
-                            <label htmlFor="Select_Priority" >Priority: </label>
-                            <select id="Select_Priority" value={priority} onChange={(e) => setPriority(e.target.value)}>
-                                <option value="low">Low</option>
-                                <option value="medium">Medium</option>
-                                <option value="high">High</option>
+                            <label htmlFor="Select_Priority" ></label>
+                            <select id="Select_Priority" value={categoryy} onChange={(e) => setCategoryy(e.target.value)}>
+                                <option value="Google">Google</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Instagram">Instagram</option>
                             </select>
                         </div>
-                        <button type="submit">Create</button>
+                        <button type="submit">Add</button>
                     </form>
                 </div>
             </div>

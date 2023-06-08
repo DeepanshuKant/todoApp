@@ -34,9 +34,9 @@ const listReducer = (state = initialState, action) => {
 
         case CREATE_LIST_REQUEST:
             return {
+                ...state,
                 loading: true,
                 isCreated: false,
-                ...state
             }
 
         case CREATE_LIST_SUCCESS:

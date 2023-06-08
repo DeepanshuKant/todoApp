@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import CreateList from './CreateList'
 import AllList from './AllLists'
 import Loader from '../../components/Loader/Loader'
+import bcrypt from 'bcryptjs'
 
 import { getLists, clearErrors } from '../../redux/reducers/listReducer/list.action'
 
@@ -17,9 +18,6 @@ const List = () => {
     const [lists, setLists] = useState([]);
 
     const navigate = useNavigate()
-
-
-
 
 
     useEffect(() => {
@@ -41,6 +39,7 @@ const List = () => {
 
     useEffect(() => {
         if (reduxStore.isSet) {
+            // console.log(userReducer.user.user.secretCode)
             setLists(reduxStore.lists)
         }
     }, [dispatch, reduxStore.isSet])
